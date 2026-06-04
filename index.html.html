@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medera Clinic — Многопрофильный медицинский центр, Астана</title>
+<meta name="description" content="Многопрофильный медицинский центр Medera Clinic в Астане. Запись онлайн: +7 708 807 60 47. Кардиология, неврология, ортопедия, гастроэнтерология, лаборатория.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a2540;
+  --navy2:#103a6a;
+  --blue:#1a5fa8;
+  --blue-light:#3b8de0;
+  --sky:#e8f3fc;
+  --sky2:#d0e8f8;
+  --white:#ffffff;
+  --gray:#f5f7fa;
+  --text:#1a2a3a;
+  --muted:#5a7080;
+  --border:#d0dce8;
+  --accent:#0e9f6e;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,.logo-text{font-family:'Cormorant Garamond',serif}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:38px;height:38px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-cross{color:white;font-size:22px;font-weight:300;line-height:1}
+.logo-text{font-size:22px;color:var(--navy);font-weight:600;letter-spacing:0.3px}
+.logo-text span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--muted);font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.lang-switcher{display:flex;gap:4px}
+.lang-btn{border:1px solid var(--border);background:none;padding:4px 9px;border-radius:5px;font-size:12px;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
+.nav-cta{background:var(--blue);color:white;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:1.5rem 2rem;z-index:999;flex-direction:column;gap:1rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:16px;color:var(--navy);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border)}
+
+/* HERO */
+.hero{min-height:100vh;padding:70px 0 0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#1a5fa8 100%);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,white 0,white 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,white 0,white 1px,transparent 1px,transparent 60px)}
+.hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.08)}
+.hero-circle-1{width:600px;height:600px;right:-100px;top:-100px}
+.hero-circle-2{width:400px;height:400px;right:50px;top:50px}
+.hero-circle-3{width:200px;height:200px;right:200px;top:200px}
+.hero-inner{max-width:1200px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:6px 14px;border-radius:20px;font-size:13px;color:rgba(255,255,255,0.9);margin-bottom:1.5rem}
+.hero-badge-dot{width:6px;height:6px;background:#0e9f6e;border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:56px;line-height:1.1;color:white;margin-bottom:1.5rem;font-weight:500}
+.hero h1 em{font-style:normal;color:#7ec8f5}
+.hero-desc{font-size:16px;line-height:1.8;color:rgba(255,255,255,0.75);margin-bottom:2.5rem;max-width:440px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:white;color:var(--navy);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{background:var(--sky2);transform:translateY(-1px)}
+.btn-outline{background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:400;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
+.btn-outline:hover{background:rgba(255,255,255,0.18)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;margin-top:2.5rem}
+.hero-stat{padding:1.25rem;background:rgba(255,255,255,0.05);text-align:center}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:32px;color:white;font-weight:600;line-height:1}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px}
+.hero-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:2rem}
+.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:white;margin-bottom:1.25rem;font-weight:500}
+.hero-info-row{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.hero-info-row:last-child{border-bottom:none}
+.info-icon{width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.info-label{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.5px}
+.info-val{font-size:14px;color:white;margin-top:2px}
+
+/* SECTIONS */
+section{padding:5rem 0}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--blue);font-weight:500;margin-bottom:0.75rem}
+.section-title{font-size:42px;color:var(--navy);font-weight:500;line-height:1.15;margin-bottom:1.25rem}
+.section-sub{font-size:16px;color:var(--muted);line-height:1.8;max-width:560px}
+
+/* SERVICES */
+.services-bg{background:var(--gray)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.service-card{background:white;border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:all 0.25s;cursor:pointer;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--blue-light);box-shadow:0 8px 32px rgba(26,95,168,0.1);transform:translateY(-3px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:52px;height:52px;background:var(--sky);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:1.25rem}
+.service-card h3{font-size:18px;color:var(--navy);margin-bottom:0.6rem;font-family:'Cormorant Garamond',serif;font-weight:600}
+.service-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.service-tag{display:inline-block;background:var(--sky);color:var(--blue);font-size:11px;padding:3px 8px;border-radius:4px;margin-top:1rem;font-weight:500}
+
+/* DOCTORS */
+.doctors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.doctor-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.25s;background:white}
+.doctor-card:hover{box-shadow:0 8px 32px rgba(10,37,64,0.1);transform:translateY(-3px)}
+.doctor-avatar{height:180px;background:var(--sky);display:flex;align-items:center;justify-content:center;position:relative}
+.avatar-initials{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--blue);font-weight:600}
+.doctor-spec-badge{position:absolute;bottom:10px;left:10px;background:white;padding:4px 10px;border-radius:6px;font-size:11px;color:var(--blue);font-weight:500;border:1px solid var(--sky2)}
+.doctor-info{padding:1.25rem}
+.doctor-info h3{font-size:16px;color:var(--navy);font-weight:500;margin-bottom:4px;font-family:'Cormorant Garamond',serif}
+.doctor-info .spec{font-size:13px;color:var(--muted)}
+.doctor-info .exp{font-size:12px;color:var(--accent);font-weight:500;margin-top:6px}
+
+/* WHY */
+.why-bg{background:var(--navy)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem}
+.why-item{display:flex;gap:1.25rem;align-items:flex-start}
+.why-num{width:40px;height:40px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.6);flex-shrink:0;margin-top:2px}
+.why-item h4{font-size:16px;color:white;margin-bottom:4px;font-weight:500}
+.why-item p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7}
+.why-visual{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:2.5rem}
+.why-visual-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:white;margin-bottom:1.5rem;font-weight:500}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cert-item{background:rgba(255,255,255,0.06);border-radius:10px;padding:1rem;text-align:center}
+.cert-icon{font-size:28px;margin-bottom:8px}
+.cert-label{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.4}
+.why-section .section-label{color:rgba(255,255,255,0.5)}
+.why-section .section-title{color:white}
+.why-section .section-sub{color:rgba(255,255,255,0.65)}
+
+/* BOOKING */
+.booking-bg{background:var(--sky)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.booking-form{background:white;border-radius:20px;padding:2.5rem;border:1px solid var(--border);box-shadow:0 4px 32px rgba(10,37,64,0.06)}
+.booking-form h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--navy);margin-bottom:1.75rem;font-weight:600}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:13px;font-weight:500;color:var(--navy);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;transition:border 0.2s;background:white;appearance:auto}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue-light);box-shadow:0 0 0 3px rgba(59,141,224,0.1)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-submit{width:100%;background:var(--blue);color:white;padding:14px;border-radius:10px;font-size:15px;font-weight:500;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-submit:hover{background:var(--navy)}
+.booking-info h2{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--navy);font-weight:500;margin-bottom:1rem;line-height:1.15}
+.booking-info p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.booking-steps{display:flex;flex-direction:column;gap:1.25rem}
+.booking-step{display:flex;gap:1rem;align-items:flex-start}
+.step-num{width:32px;height:32px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:white;font-weight:500;flex-shrink:0;margin-top:2px}
+.step-text h4{font-size:15px;color:var(--navy);font-weight:500;margin-bottom:3px}
+.step-text p{font-size:13px;color:var(--muted);line-height:1.6}
+.social-btns{display:flex;gap:0.75rem;margin-top:2rem;flex-wrap:wrap}
+.social-btn-wa{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:white;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:opacity 0.2s}
+.social-btn-wa:hover{opacity:0.9}
+.social-btn-ig{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:opacity 0.2s}
+.social-btn-ig:hover{opacity:0.9}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.contact-cards{display:flex;flex-direction:column;gap:1rem}
+.contact-card{display:flex;gap:1rem;align-items:flex-start;background:var(--gray);border-radius:12px;padding:1.25rem}
+.contact-card-icon{width:44px;height:44px;background:var(--sky);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-card h4{font-size:13px;color:var(--muted);margin-bottom:4px;font-weight:400}
+.contact-card p{font-size:15px;color:var(--navy);font-weight:500;line-height:1.5}
+.contact-card a{font-size:15px;color:var(--blue);text-decoration:none;font-weight:500}
+.contact-card a:hover{text-decoration:underline}
+.hours-table{margin-top:0.5rem}
+.hours-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px dashed var(--border)}
+.hours-row:last-child{border-bottom:none}
+.hours-row span:first-child{color:var(--muted)}
+.hours-row span:last-child{color:var(--navy);font-weight:500}
+.map-wrap{border-radius:16px;overflow:hidden;border:1px solid var(--border);height:340px;background:var(--sky);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.map-pin-big{font-size:48px}
+.map-address-text{font-size:14px;color:var(--muted);text-align:center;max-width:260px;line-height:1.6}
+.map-open-btn{background:var(--blue);color:white;padding:10px 22px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:500;transition:background 0.2s}
+.map-open-btn:hover{background:var(--navy)}
+.contact-social-row{display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap}
+.contact-social-btn{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:14px;text-decoration:none;font-weight:500;transition:all 0.2s;border:1px solid var(--border);color:var(--navy);background:white}
+.contact-social-btn:hover{background:var(--sky);border-color:var(--blue-light)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3.5rem 0 1.5rem}
+.footer-grid{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.footer-logo-mark{width:38px;height:38px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.footer-logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;color:white;font-weight:600}
+.footer-logo-text span{color:#7ec8f5}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8}
+.footer-col h5{font-size:12px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem;font-weight:400}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:white}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,0.3)}
+
+/* SUCCESS MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,37,64,0.55);backdrop-filter:blur(4px);z-index:9999;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.show{display:flex}
+.modal-box{background:white;border-radius:20px;padding:3rem 2.5rem;text-align:center;max-width:420px;width:100%}
+.modal-icon{font-size:52px;margin-bottom:1rem}
+.modal-box h3{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:0.75rem;font-weight:600}
+.modal-box p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:2rem}
+.modal-close{background:var(--blue);color:white;padding:12px 36px;border-radius:10px;font-size:15px;font-weight:500;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
+.modal-close:hover{background:var(--navy)}
+
+/* LANG */
+[data-lang]{display:none}
+[data-lang].active{display:inline}
+div[data-lang].active,p[data-lang].active,h1[data-lang].active,h2[data-lang].active,h3[data-lang].active,h4[data-lang].active{display:block}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner,.why-grid,.booking-grid{grid-template-columns:1fr}
+  .hero h1{font-size:42px}
+  .hero-card{display:none}
+  .doctors-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:34px}
+  .section-title{font-size:30px}
+  .services-grid,.doctors-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .cert-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark"><div class="logo-cross">✚</div></div>
+      <span class="logo-text">Medera<span>Clinic</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" onclick="smoothScroll(event,'services')">
+        <span data-lang="ru" class="active">Услуги</span>
+        <span data-lang="kz">Қызметтер</span>
+        <span data-lang="en">Services</span>
+      </a>
+      <a href="#doctors" onclick="smoothScroll(event,'doctors')">
+        <span data-lang="ru" class="active">Врачи</span>
+        <span data-lang="kz">Дәрігерлер</span>
+        <span data-lang="en">Doctors</span>
+      </a>
+      <a href="#about" onclick="smoothScroll(event,'about')">
+        <span data-lang="ru" class="active">О нас</span>
+        <span data-lang="kz">Біз туралы</span>
+        <span data-lang="en">About</span>
+      </a>
+      <a href="#booking" onclick="smoothScroll(event,'booking')">
+        <span data-lang="ru" class="active">Запись</span>
+        <span data-lang="kz">Жазылу</span>
+        <span data-lang="en">Book</span>
+      </a>
+      <a href="#contact" onclick="smoothScroll(event,'contact')">
+        <span data-lang="ru" class="active">Контакты</span>
+        <span data-lang="kz">Байланыс</span>
+        <span data-lang="en">Contact</span>
+      </a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('kz')">KZ</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <a href="#booking" class="nav-cta" onclick="smoothScroll(event,'booking')">
+      <span data-lang="ru" class="active">Записаться онлайн</span>
+      <span data-lang="kz">Онлайн жазылу</span>
+      <span data-lang="en">Book Online</span>
+    </a>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="closeMobileMenu();smoothScroll(event,'services')">
+    <span data-lang="ru" class="active">Услуги</span><span data-lang="kz">Қызметтер</span><span data-lang="en">Services</span>
+  </a>
+  <a href="#doctors" onclick="closeMobileMenu();smoothScroll(event,'doctors')">
+    <span data-lang="ru" class="active">Врачи</span><span data-lang="kz">Дәрігерлер</span><span data-lang="en">Doctors</span>
+  </a>
+  <a href="#about" onclick="closeMobileMenu();smoothScroll(event,'about')">
+    <span data-lang="ru" class="active">О нас</span><span data-lang="kz">Біз туралы</span><span data-lang="en">About</span>
+  </a>
+  <a href="#booking" onclick="closeMobileMenu();smoothScroll(event,'booking')">
+    <span data-lang="ru" class="active">Запись онлайн</span><span data-lang="kz">Онлайн жазылу</span><span data-lang="en">Book Online</span>
+  </a>
+  <a href="#contact" onclick="closeMobileMenu();smoothScroll(event,'contact')">
+    <span data-lang="ru" class="active">Контакты</span><span data-lang="kz">Байланыс</span><span data-lang="en">Contact</span>
+  </a>
+  <div class="lang-switcher" style="padding:0.5rem 0">
+    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('kz')">KZ</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+  <div class="hero-circle hero-circle-3"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-lang="ru" class="active">Сегодня открыто: 08:00 – 19:00</span>
+        <span data-lang="kz">Бүгін ашық: 08:00 – 19:00</span>
+        <span data-lang="en">Open today: 08:00 – 19:00</span>
+      </div>
+      <h1>
+        <span data-lang="ru" class="active">Ваше здоровье —<br><em>наш приоритет</em></span>
+        <span data-lang="kz">Сіздің денсаулығыңыз —<br><em>біздің басымдық</em></span>
+        <span data-lang="en">Your health —<br><em>our priority</em></span>
+      </h1>
+      <p class="hero-desc">
+        <span data-lang="ru" class="active">Многопрофильный медицинский центр в Астане. Современное оборудование, квалифицированные специалисты и индивидуальный подход к каждому пациенту.</span>
+        <span data-lang="kz">Астанадағы көпсалалы медициналық орталық. Заманауи жабдықтар, білікті мамандар және әрбір пациентке жеке тәсіл.</span>
+        <span data-lang="en">A multidisciplinary medical centre in Astana. Modern equipment, qualified specialists and a personalised approach to every patient.</span>
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary" onclick="smoothScroll(event,'booking')">
+          ✚ <span data-lang="ru" class="active">Записаться онлайн</span><span data-lang="kz">Онлайн жазылу</span><span data-lang="en">Book Online</span>
+        </a>
+        <a href="tel:+77088076047" class="btn-outline">📞 +7 708 807 60 47</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label"><span data-lang="ru" class="active">Специальностей</span><span data-lang="kz">Мамандық</span><span data-lang="en">Specialities</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">1000+</div>
+          <div class="hero-stat-label"><span data-lang="ru" class="active">Пациентов</span><span data-lang="kz">Пациент</span><span data-lang="en">Patients</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">5★</div>
+          <div class="hero-stat-label"><span data-lang="ru" class="active">Рейтинг</span><span data-lang="kz">Рейтинг</span><span data-lang="en">Rating</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">
+        <span data-lang="ru" class="active">Информация о клинике</span>
+        <span data-lang="kz">Клиника туралы</span>
+        <span data-lang="en">Clinic Info</span>
+      </div>
+      <div class="hero-info-row">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label"><span data-lang="ru" class="active">Адрес</span><span data-lang="kz">Мекенжай</span><span data-lang="en">Address</span></div>
+          <div class="info-val">ул. Ахмет Байтурсынулы, 6а<br>Сарайшык район, Астана</div>
+        </div>
+      </div>
+      <div class="hero-info-row">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label"><span data-lang="ru" class="active">Режим работы</span><span data-lang="kz">Жұмыс уақыты</span><span data-lang="en">Working Hours</span></div>
+          <div class="info-val">
+            <span data-lang="ru" class="active">Пн–Пт: 08:00–19:00 · Сб: 08:00–16:00</span>
+            <span data-lang="kz">Дс–Жм: 08:00–19:00 · Сб: 08:00–16:00</span>
+            <span data-lang="en">Mon–Fri: 08:00–19:00 · Sat: 08:00–16:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-info-row">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label"><span data-lang="ru" class="active">Телефон</span><span data-lang="kz">Телефон</span><span data-lang="en">Phone</span></div>
+          <div class="info-val"><a href="tel:+77088076047" style="color:white;text-decoration:none">+7 708 807 60 47</a></div>
+        </div>
+      </div>
+      <div class="hero-info-row">
+        <div class="info-icon">✉️</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-val"><a href="mailto:mederaclinic25@gmail.com" style="color:#7ec8f5;text-decoration:none">mederaclinic25@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-label"><span data-lang="ru" class="active">Наши услуги</span><span data-lang="kz">Біздің қызметтеріміз</span><span data-lang="en">Our Services</span></div>
+    <h2 class="section-title">
+      <span data-lang="ru" class="active">Многопрофильная<br>медицинская помощь</span>
+      <span data-lang="kz">Көпсалалы<br>медициналық көмек</span>
+      <span data-lang="en">Multidisciplinary<br>Medical Care</span>
+    </h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🫀</div>
+        <h3><span data-lang="ru" class="active">Кардиология</span><span data-lang="kz">Кардиология</span><span data-lang="en">Cardiology</span></h3>
+        <p><span data-lang="ru" class="active">Диагностика и лечение заболеваний сердца и сосудов. ЭКГ, УЗИ сердца, холтер-мониторинг суточного давления.</span><span data-lang="kz">Жүрек-қан тамыр ауруларын диагностикалау және емдеу. ЭКГ, жүрек УДЗ, холтер мониторинг.</span><span data-lang="en">Diagnosis and treatment of cardiovascular diseases. ECG, echocardiography, Holter monitoring.</span></p>
+        <span class="service-tag">ЭКГ · УЗИ · Холтер</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3><span data-lang="ru" class="active">Неврология</span><span data-lang="kz">Неврология</span><span data-lang="en">Neurology</span></h3>
+        <p><span data-lang="ru" class="active">Лечение головных болей, нарушений сна, остеохондроза, невралгий и других неврологических заболеваний.</span><span data-lang="kz">Бас ауруларын, ұйқы бұзылыстарын, остеохондрозды, невралгияларды емдеу.</span><span data-lang="en">Treatment of headaches, sleep disorders, osteochondrosis and neurological conditions.</span></p>
+        <span class="service-tag">ЭЭГ · МРТ · ЭМГ</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🦴</div>
+        <h3><span data-lang="ru" class="active">Ортопедия и травматология</span><span data-lang="kz">Ортопедия және травматология</span><span data-lang="en">Orthopaedics</span></h3>
+        <p><span data-lang="ru" class="active">Диагностика и лечение заболеваний опорно-двигательного аппарата, суставов и позвоночника.</span><span data-lang="kz">Тірек-қимыл аппараты, буындар мен омыртқа ауруларын диагностикалау.</span><span data-lang="en">Diagnosis and treatment of musculoskeletal, joint and spinal conditions.</span></p>
+        <span class="service-tag">Рентген · УЗИ суставов</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <h3><span data-lang="ru" class="active">Гастроэнтерология</span><span data-lang="kz">Гастроэнтерология</span><span data-lang="en">Gastroenterology</span></h3>
+        <p><span data-lang="ru" class="active">Диагностика и лечение заболеваний желудочно-кишечного тракта, печени и поджелудочной железы.</span><span data-lang="kz">Ас қорыту жолдары, бауыр және ұйқы безі ауруларын диагностикалау.</span><span data-lang="en">Diagnosis and treatment of gastrointestinal, liver and pancreatic conditions.</span></p>
+        <span class="service-tag">ФГДС · УЗИ брюшины</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <h3><span data-lang="ru" class="active">Лабораторная диагностика</span><span data-lang="kz">Зертханалық диагностика</span><span data-lang="en">Laboratory Diagnostics</span></h3>
+        <p><span data-lang="ru" class="active">Общий и биохимический анализ крови и мочи. Гормональные, иммунологические и инфекционные исследования.</span><span data-lang="kz">Жалпы және биохимиялық қан, несеп анализдері. Гормоналды зерттеулер.</span><span data-lang="en">Complete blood count, biochemistry, hormonal and immunological studies.</span></p>
+        <span class="service-tag">Кровь · Моча · Гормоны</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <h3><span data-lang="ru" class="active">Терапия / ВОП</span><span data-lang="kz">Терапия / ЖДД</span><span data-lang="en">GP / General Medicine</span></h3>
+        <p><span data-lang="ru" class="active">Первичная медицинская помощь, диспансеризация, профилактические осмотры, справки, направления.</span><span data-lang="kz">Алғашқы медициналық көмек, профилактикалық тексерулер, анықтамалар.</span><span data-lang="en">Primary care, health check-ups, preventive screenings, referrals and certificates.</span></p>
+        <span class="service-tag">Осмотр · Справки · ДМС</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+  <div class="section-inner">
+    <div class="section-label"><span data-lang="ru" class="active">Наша команда</span><span data-lang="kz">Біздің команда</span><span data-lang="en">Our Team</span></div>
+    <h2 class="section-title">
+      <span data-lang="ru" class="active">Квалифицированные специалисты</span>
+      <span data-lang="kz">Білікті мамандар</span>
+      <span data-lang="en">Qualified Specialists</span>
+    </h2>
+    <div class="doctors-grid">
+      <div class="doctor-card">
+        <div class="doctor-avatar" style="background:#e8f3fc">
+          <div class="avatar-initials" style="color:#1a5fa8">АС</div>
+          <span class="doctor-spec-badge"><span data-lang="ru" class="active">Кардиолог</span><span data-lang="kz">Кардиолог</span><span data-lang="en">Cardiologist</span></span>
+        </div>
+        <div class="doctor-info">
+          <h3></h3>
+          <div class="spec"><span data-lang="ru" class="active">Кардиолог</span><span data-lang="kz">Кардиолог</span><span data-lang="en">Cardiologist</span></div>
+          <div class="exp"><span data-lang="ru" class="active">Стаж 12 лет</span><span data-lang="kz">Тәжірибе 12 жыл</span><span data-lang="en">12 years experience</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-avatar" style="background:#f0faf5">
+          <div class="avatar-initials" style="color:#0e9f6e">МН</div>
+          <span class="doctor-spec-badge"><span data-lang="ru" class="active">Невролог</span><span data-lang="kz">Невролог</span><span data-lang="en">Neurologist</span></span>
+        </div>
+        <div class="doctor-info">
+          <h3></h3>
+          <div class="spec"><span data-lang="ru" class="active">Невролог</span><span data-lang="kz">Невролог</span><span data-lang="en">Neurologist</span></div>
+          <div class="exp"><span data-lang="ru" class="active">Стаж 9 лет</span><span data-lang="kz">Тәжірибе 9 жыл</span><span data-lang="en">9 years experience</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-avatar" style="background:#fdf3ec">
+          <div class="avatar-initials" style="color:#d85a30">ДА</div>
+          <span class="doctor-spec-badge"><span data-lang="ru" class="active">Ортопед</span><span data-lang="kz">Ортопед</span><span data-lang="en">Orthopaedist</span></span>
+        </div>
+        <div class="doctor-info">
+          <h3></h3>
+          <div class="spec"><span data-lang="ru" class="active">Ортопед-травматолог</span><span data-lang="kz">Ортопед-травматолог</span><span data-lang="en">Orthopaedic Surgeon</span></div>
+          <div class="exp"><span data-lang="ru" class="active">Стаж 15 лет</span><span data-lang="kz">Тәжірибе 15 жыл</span><span data-lang="en">15 years experience</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-avatar" style="background:#f5eef8">
+          <div class="avatar-initials" style="color:#7f77dd">ЕК</div>
+          <span class="doctor-spec-badge"><span data-lang="ru" class="active">Гастроэнтеролог</span><span data-lang="kz">Гастроэнтеролог</span><span data-lang="en">Gastroenterologist</span></span>
+        </div>
+        <div class="doctor-info">
+          <h3></h3>
+          <div class="spec"><span data-lang="ru" class="active">Гастроэнтеролог</span><span data-lang="kz">Гастроэнтеролог</span><span data-lang="en">Gastroenterologist</span></div>
+          <div class="exp"><span data-lang="ru" class="active">Стаж 8 лет</span><span data-lang="kz">Тәжірибе 8 жыл</span><span data-lang="en">8 years experience</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="about" class="why-bg why-section">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-label"><span data-lang="ru" class="active">Почему мы</span><span data-lang="kz">Неліктен біз</span><span data-lang="en">Why Choose Us</span></div>
+        <h2 class="section-title">
+          <span data-lang="ru" class="active">Медицина, которой<br>вы доверяете</span>
+          <span data-lang="kz">Сенетін<br>медицина</span>
+          <span data-lang="en">Medicine you<br>can trust</span>
+        </h2>
+        <p class="section-sub">
+          <span data-lang="ru" class="active">Medera Clinic — современная клиника с профессиональной командой врачей, передовым оборудованием и искренней заботой о каждом пациенте.</span>
+          <span data-lang="kz">Medera Clinic — кәсіби дәрігерлер командасы бар заманауи клиника.</span>
+          <span data-lang="en">Medera Clinic is a modern clinic with a professional medical team and genuine care for every patient.</span>
+        </p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Современное оборудование</span><span data-lang="kz">Заманауи жабдықтар</span><span data-lang="en">Modern Equipment</span></h4>
+              <p><span data-lang="ru" class="active">Диагностическое и лечебное оборудование последнего поколения для точных и быстрых результатов.</span><span data-lang="kz">Дәл нәтижелер үшін соңғы буын диагностикалық жабдықтар.</span><span data-lang="en">Latest generation equipment for accurate and fast diagnostic results.</span></p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Опытные специалисты</span><span data-lang="kz">Тәжірибелі мамандар</span><span data-lang="en">Experienced Specialists</span></h4>
+              <p><span data-lang="ru" class="active">Врачи с многолетним опытом, прошедшие международные стажировки и регулярное повышение квалификации.</span><span data-lang="kz">Халықаралық тағылымдамадан өткен жылдар бойы тәжірибесі бар дәрігерлер.</span><span data-lang="en">Doctors with extensive experience and regular international training.</span></p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Доступные цены и ДМС</span><span data-lang="kz">Қолжетімді бағалар және ДМС</span><span data-lang="en">Affordable Prices &amp; VHI</span></h4>
+              <p><span data-lang="ru" class="active">Прозрачная ценовая политика без скрытых платежей. Принимаем страховые полисы ДМС всех крупных страховщиков.</span><span data-lang="kz">Жасырын төлемдерсіз мөлдір баға саясаты. ДМС сақтандыру полистерін қабылдаймыз.</span><span data-lang="en">Transparent pricing with no hidden fees. We accept all major VHI insurance policies.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="why-visual-title">
+          <span data-lang="ru" class="active">Наши преимущества</span>
+          <span data-lang="kz">Біздің артықшылықтарымыз</span>
+          <span data-lang="en">Our Advantages</span>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-item"><div class="cert-icon">🏥</div><div class="cert-label"><span data-lang="ru" class="active">Многопрофильный центр</span><span data-lang="kz">Көпсалалы орталық</span><span data-lang="en">Multidisciplinary Centre</span></div></div>
+          <div class="cert-item"><div class="cert-icon">⚡</div><div class="cert-label"><span data-lang="ru" class="active">Быстрая диагностика</span><span data-lang="kz">Жылдам диагностика</span><span data-lang="en">Fast Diagnostics</span></div></div>
+          <div class="cert-item"><div class="cert-icon">🛡️</div><div class="cert-label"><span data-lang="ru" class="active">Лицензированная клиника</span><span data-lang="kz">Лицензиялы клиника</span><span data-lang="en">Licensed Clinic</span></div></div>
+          <div class="cert-item"><div class="cert-icon">💬</div><div class="cert-label"><span data-lang="ru" class="active">Онлайн-консультации</span><span data-lang="kz">Онлайн кеңестер</span><span data-lang="en">Online Consultations</span></div></div>
+          <div class="cert-item"><div class="cert-icon">🌐</div><div class="cert-label"><span data-lang="ru" class="active">Три языка</span><span data-lang="kz">Үш тіл</span><span data-lang="en">Three Languages</span></div></div>
+          <div class="cert-item"><div class="cert-icon">📋</div><div class="cert-label"><span data-lang="ru" class="active">Электронные карты</span><span data-lang="kz">Электронды карталар</span><span data-lang="en">Electronic Records</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-bg">
+  <div class="section-inner">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <div class="section-label"><span data-lang="ru" class="active">Запись онлайн</span><span data-lang="kz">Онлайн жазылу</span><span data-lang="en">Online Booking</span></div>
+        <h2>
+          <span data-lang="ru" class="active">Запишитесь<br>прямо сейчас</span>
+          <span data-lang="kz">Қазір<br>жазылыңыз</span>
+          <span data-lang="en">Book your<br>appointment</span>
+        </h2>
+        <p>
+          <span data-lang="ru" class="active">Оставьте заявку — наш администратор свяжется с вами в течение 15 минут для подтверждения записи и выбора удобного времени.</span>
+          <span data-lang="kz">Өтінім қалдырыңыз — әкімшіміз сізге 15 минут ішінде хабарласады.</span>
+          <span data-lang="en">Submit a request and our administrator will contact you within 15 minutes to confirm your appointment.</span>
+        </p>
+        <div class="booking-steps">
+          <div class="booking-step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h4><span data-lang="ru" class="active">Заполните форму</span><span data-lang="kz">Форманы толтырыңыз</span><span data-lang="en">Fill in the form</span></h4>
+              <p><span data-lang="ru" class="active">Укажите имя, телефон и нужного специалиста</span><span data-lang="kz">Аты-жөніңізді, телефоныңызды көрсетіңіз</span><span data-lang="en">Enter your name, phone and required specialist</span></p>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h4><span data-lang="ru" class="active">Ждите звонка</span><span data-lang="kz">Қоңырауды күтіңіз</span><span data-lang="en">Wait for a call</span></h4>
+              <p><span data-lang="ru" class="active">Мы свяжемся с вами в течение 15 минут</span><span data-lang="kz">15 минут ішінде хабарласамыз</span><span data-lang="en">We will call you within 15 minutes</span></p>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h4><span data-lang="ru" class="active">Приходите на приём</span><span data-lang="kz">Қабылдауға келіңіз</span><span data-lang="en">Come to your appointment</span></h4>
+              <p><span data-lang="ru" class="active">В удобное для вас время</span><span data-lang="kz">Сізге ыңғайлы уақытта</span><span data-lang="en">At a time that suits you</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="social-btns">
+          <a href="https://wa.me/77088076047" class="social-btn-wa" target="_blank">💬 WhatsApp</a>
+          <a href="https://instagram.com/medera_clinic" class="social-btn-ig" target="_blank">📷 Instagram</a>
+        </div>
+      </div>
+      <div class="booking-form">
+        <h3>
+          <span data-lang="ru" class="active">Форма записи</span>
+          <span data-lang="kz">Жазылу нысаны</span>
+          <span data-lang="en">Appointment Form</span>
+        </h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-lang="ru" class="active">Имя *</span><span data-lang="kz">Аты *</span><span data-lang="en">Name *</span></label>
+            <input type="text" id="f-name" placeholder="Иван Иванов">
+          </div>
+          <div class="form-group">
+            <label><span data-lang="ru" class="active">Телефон *</span><span data-lang="kz">Телефон *</span><span data-lang="en">Phone *</span></label>
+            <input type="tel" id="f-phone" placeholder="+7 ___ ___ __ __">
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span data-lang="ru" class="active">Специалист</span><span data-lang="kz">Маман</span><span data-lang="en">Specialist</span></label>
+          <select id="f-spec">
+            <option value=""><span data-lang="ru" class="active">— Выберите специальность —</span></option>
+            <option value="therapy">Терапевт / ВОП</option>
+            <option value="cardio">Кардиолог</option>
+            <option value="neuro">Невролог</option>
+            <option value="ortho">Ортопед-травматолог</option>
+            <option value="gastro">Гастроэнтеролог</option>
+            <option value="lab">Лабораторная диагностика</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-lang="ru" class="active">Дата</span><span data-lang="kz">Күні</span><span data-lang="en">Date</span></label>
+            <input type="date" id="f-date">
+          </div>
+          <div class="form-group">
+            <label><span data-lang="ru" class="active">Время</span><span data-lang="kz">Уақыты</span><span data-lang="en">Time</span></label>
+            <select id="f-time">
+              <option>08:00</option><option>09:00</option><option>10:00</option>
+              <option>11:00</option><option>12:00</option><option>13:00</option>
+              <option>14:00</option><option>15:00</option><option>16:00</option>
+              <option>17:00</option><option>18:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span data-lang="ru" class="active">Комментарий</span><span data-lang="kz">Пікір</span><span data-lang="en">Comment</span></label>
+          <textarea id="f-comment" placeholder="Опишите жалобы или пожелания..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">
+          ✚ <span data-lang="ru" class="active">Записаться на приём</span><span data-lang="kz">Қабылдауға жазылу</span><span data-lang="en">Book Appointment</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label"><span data-lang="ru" class="active">Контакты</span><span data-lang="kz">Байланыс</span><span data-lang="en">Contact</span></div>
+    <h2 class="section-title">
+      <span data-lang="ru" class="active">Как нас найти</span>
+      <span data-lang="kz">Бізді қалай табуға болады</span>
+      <span data-lang="en">How to Find Us</span>
+    </h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Адрес</span><span data-lang="kz">Мекенжай</span><span data-lang="en">Address</span></h4>
+              <p>ул. Ахмет Байтурсынулы, 6а<br>Сарайшык район, Астана</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🕐</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Режим работы</span><span data-lang="kz">Жұмыс уақыты</span><span data-lang="en">Working Hours</span></h4>
+              <div class="hours-table">
+                <div class="hours-row">
+                  <span><span data-lang="ru" class="active">Понедельник–Пятница</span><span data-lang="kz">Дүйсенбі–Жұма</span><span data-lang="en">Monday–Friday</span></span>
+                  <span>08:00 – 19:00</span>
+                </div>
+                <div class="hours-row">
+                  <span><span data-lang="ru" class="active">Суббота</span><span data-lang="kz">Сенбі</span><span data-lang="en">Saturday</span></span>
+                  <span>08:00 – 16:00</span>
+                </div>
+                <div class="hours-row">
+                  <span><span data-lang="ru" class="active">Воскресенье</span><span data-lang="kz">Жексенбі</span><span data-lang="en">Sunday</span></span>
+                  <span style="color:#e24b4a"><span data-lang="ru" class="active">Выходной</span><span data-lang="kz">Демалыс</span><span data-lang="en">Closed</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <div>
+              <h4><span data-lang="ru" class="active">Телефон</span><span data-lang="kz">Телефон</span><span data-lang="en">Phone</span></h4>
+              <a href="tel:+77088076047">+7 708 807 60 47</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:mederaclinic25@gmail.com">mederaclinic25@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-social-row">
+          <a href="https://instagram.com/medera_clinic" class="contact-social-btn" target="_blank">📷 Instagram</a>
+          <a href="https://wa.me/77088076047" class="contact-social-btn" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div class="map-wrap">
+          <div class="map-pin-big">📍</div>
+          <div class="map-address-text">ул. Ахмет Байтурсынулы, 6а<br>Сарайшык район, Астана</div>
+          <a href="https://2gis.kz/astana/geo/70030077101330322" class="map-open-btn" target="_blank">
+            <span data-lang="ru" class="active">Открыть на 2GIS</span>
+            <span data-lang="kz">2GIS-те ашу</span>
+            <span data-lang="en">Open in 2GIS</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-mark"><div class="logo-cross">✚</div></div>
+        <span class="footer-logo-text">Medera<span>Clinic</span></span>
+      </div>
+      <p class="footer-desc">
+        <span data-lang="ru" class="active">Многопрофильный медицинский центр в Астане. Забота о вашем здоровье — наша миссия.</span>
+        <span data-lang="kz">Астанадағы көпсалалы медициналық орталық. Денсаулығыңыз — біздің миссиямыз.</span>
+        <span data-lang="en">A multidisciplinary medical centre in Astana. Your health is our mission.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5><span data-lang="ru" class="active">Услуги</span><span data-lang="kz">Қызметтер</span><span data-lang="en">Services</span></h5>
+      <a href="#services"><span data-lang="ru" class="active">Кардиология</span><span data-lang="kz">Кардиология</span><span data-lang="en">Cardiology</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Неврология</span><span data-lang="kz">Неврология</span><span data-lang="en">Neurology</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Ортопедия</span><span data-lang="kz">Ортопедия</span><span data-lang="en">Orthopaedics</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Гастроэнтерология</span><span data-lang="kz">Гастроэнтерология</span><span data-lang="en">Gastroenterology</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Лаборатория</span><span data-lang="kz">Зертхана</span><span data-lang="en">Laboratory</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span data-lang="ru" class="active">Клиника</span><span data-lang="kz">Клиника</span><span data-lang="en">Clinic</span></h5>
+      <a href="#about"><span data-lang="ru" class="active">О нас</span><span data-lang="kz">Біз туралы</span><span data-lang="en">About</span></a>
+      <a href="#doctors"><span data-lang="ru" class="active">Врачи</span><span data-lang="kz">Дәрігерлер</span><span data-lang="en">Doctors</span></a>
+      <a href="#booking"><span data-lang="ru" class="active">Запись онлайн</span><span data-lang="kz">Онлайн жазылу</span><span data-lang="en">Book Online</span></a>
+      <a href="#contact"><span data-lang="ru" class="active">Контакты</span><span data-lang="kz">Байланыс</span><span data-lang="en">Contact</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span data-lang="ru" class="active">Контакты</span><span data-lang="kz">Байланыс</span><span data-lang="en">Contact</span></h5>
+      <a href="tel:+77088076047">+7 708 807 60 47</a>
+      <a href="mailto:mederaclinic25@gmail.com">mederaclinic25@gmail.com</a>
+      <a href="https://instagram.com/medera_clinic" target="_blank">Instagram</a>
+      <a href="https://wa.me/77088076047" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Medera Clinic. <span data-lang="ru" class="active">Все права защищены.</span><span data-lang="kz">Барлық құқықтар қорғалған.</span><span data-lang="en">All rights reserved.</span></p>
+    <p>ул. Ахмет Байтурсынулы, 6а, Астана</p>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-icon">✅</div>
+    <h3>
+      <span data-lang="ru" class="active">Заявка отправлена!</span>
+      <span data-lang="kz">Өтінім жіберілді!</span>
+      <span data-lang="en">Request Sent!</span>
+    </h3>
+    <p>
+      <span data-lang="ru" class="active">Наш администратор свяжется с вами в течение 15 минут для подтверждения записи на приём.</span>
+      <span data-lang="kz">Әкімшіміз жазылуды растау үшін 15 минут ішінде сізге хабарласады.</span>
+      <span data-lang="en">Our administrator will contact you within 15 minutes to confirm your appointment.</span>
+    </p>
+    <button class="modal-close" onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+<script>
+let currentLang = 'ru';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+  });
+  document.documentElement.lang = lang;
+}
+
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+function smoothScroll(e, id) {
+  e.preventDefault();
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const msgs = {
+    ru: 'Пожалуйста, заполните имя и телефон.',
+    kz: 'Аты-жөніңіз бен телефонды толтырыңыз.',
+    en: 'Please fill in your name and phone number.'
+  };
+  if (!name || !phone) { alert(msgs[currentLang]); return; }
+  document.getElementById('modal-overlay').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('show');
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-phone').value = '';
+  document.getElementById('f-comment').value = '';
+}
+
+// Set min date to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('f-date').value = today;
+document.getElementById('f-date').min = today;
+
+// Close mobile menu on outside click
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
